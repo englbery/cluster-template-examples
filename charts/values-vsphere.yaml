@@ -1,6 +1,6 @@
 cloudprovider: vsphere
 
-cloudCredentialSecretName: vsphere
+cloudCredentialSecretName: DemoLabRan
 
 # Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
 nodepools:
@@ -60,7 +60,7 @@ nodepools:
   # machineDeploymentAnnotations: {}
 
   # specify nodepool name
-  name: vsphere-nodepool-1
+  name: vsphere-template-nodepool-1
 
   # vSphere vm configuration parameters (used for guestinfo)
   # cfgparam: []
@@ -80,61 +80,61 @@ nodepools:
   # contentLibrary: ""
 
   # vSphere CPU number for docker VM
-  cpuCount: "2"
+  cpuCount: "0"
 
   # 'Creation type when creating a new virtual machine. Supported values: vm, template, library, legacy'
-  creationType: "vm"
+  creationType: "template"
 
   # vSphere custom attribute, format key/value e.g. '200=mycustom value'
   # customAttribute: ["200=mycustom value"]
 
   # vSphere datacenter for virtual machine
-  # datacenter: ""
+  datacenter: "Datacenter"
 
   # vSphere datastore for virtual machine
-  # datastore: ""
+  datastore: "Profile_004_NFS_DS"
 
   # vSphere datastore cluster for virtual machine
   # datastoreCluster: ""
 
   # vSphere size of disk for docker VM (in MB)
-  diskSize: "20480"
+  diskSize: "0"
 
   # vSphere folder for the docker VM. This folder must already exist in the datacenter
-  # folder: ""
+  folder: "/Datacenter/vm/Rancher-Deployment"
 
   # vSphere compute resource where the docker VM will be instantiated. This can be omitted if using a cluster with DRS
   # hostsystem: ""
 
   # vSphere size of memory for docker VM (in MB)
-  # memorySize: "2048"
+  memorySize: "0"
 
   # vSphere network where the virtual machine will be attached
-  # network: ""
+  network: "VL-115"
 
   # vSphere resource pool for docker VM
   # pool: ""
 
   # If using a non-B2D image you can specify the ssh port
-  sshPort: "22"
+  # sshPort: "22"
 
   # If using a non-B2D image the uploaded keys will need chown'ed, defaults to staff e.g. docker:staff
-  sshUserGroup: staff
+  # sshUserGroup: staff
 
   # vSphere tag id e.g. urn:xxx
   # tag: ["urn:xxx"]
 
   # 'vSphere vApp IP allocation policy. Supported values are: dhcp, fixed, transient and fixedAllocated'
-  # vappIpallocationpolicy: ""
+  vappIpallocationpolicy: "fixedAllocated"
 
   # 'vSphere vApp IP protocol for this deployment. Supported values are: IPv4 and IPv6'
-  # vappIpprotocol: ""
+  vappIpprotocol: "IPv4"
 
   # vSphere vApp properties
   # vappProperty: []
 
   # 'vSphere OVF environment transports to use for properties. Supported values are: iso and com.vmware.guestInfo'
-  # vappTransport: ""
+  vappTransport: "com.vmware.guestInfo"
 
   # vSphere IP/hostname for vCenter
   # vcenter: ""
